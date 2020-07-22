@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: orghead
+# uuid: orghead
+# key: head
+# condition: t
+# --
+
+#+TITLE:    $1
+#+AUTHOR:   Jack Deng
+#+DATE:     $(format-time-string "%Y-%m-%d-%H:%M:%S")
+#+EMAIL:    dlwxxxdlw@163.com

@@ -1,0 +1,25 @@
+# -*- mode: snippet -*-
+# name: newf
+# uuid: newf
+# key: newf
+# condition: t
+# --
+
+# -*- coding:utf-8 -*-
+"""
+-------------------------------------------------
+
+    File Name:        $1
+
+    Description:      $2
+
+    Author:           denglw@si-tech.com.cn
+
+    Date:             ${3:$(format-time-string "%Y-%m-%d-%H:%M:%S")}
+
+    Version:          v1.0
+
+    Lastmodified:     ${4:$3} by Jack Deng
+
+-------------------------------------------------
+"""

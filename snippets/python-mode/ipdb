@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: ipdb
+# uuid: ipdb
+# key: ipdb
+# condition: t
+# --
+import ipdb;ipdb.set_trace()
