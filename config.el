@@ -244,13 +244,15 @@
                                    :name "Python apimonitor")))
 (add-hook! 'dap-mode-hook (dap-register-debug-template "Python spectrum"
                              (list :type "python"
-                                   :args "runserver 0.0.0.0:8001"
-                                   :cwd nil
-                                   :target-module (expand-file-name "/mnt/d/code/python/opstools/spectrum/manage.py")
-                                   ;; :module "django"
-                                   :program nil
+                                   :args "runserver 0.0.0.0:8001 --noreload"
+                                   :cwd "/mnt/d/code/python/opstools/spectrum"
+                                   ;; :target-module (expand-file-name "/mnt/d/code/python/opstools/spectrum/manage.py")
+                                   :module nil
+                                   :console "integratedTerminal"
+                                   :program "/mnt/d/code/python/opstools/spectrum/manage.py"
                                    :request "launch"
-                                   :name "Python spectrum")))
+                                   :name "Python spectrum"
+                                   :django t)))
 (add-hook! 'dap-mode-hook (dap-register-debug-template "Python apimonitor guard"
                              (list :type "python"
                                    :cwd nil
@@ -299,16 +301,6 @@
 ;; (add-hook 'dap-stopped-hook (lambda (arg) (call-interactively #'dap-ui-sessions)))
 (add-hook 'dap-stopped-hook (lambda (arg) (call-interactively #'dap-hydra)))
 
-;; eaf emacs application framework
-;; won't work well with arch, so comment it
-;; (use-package! eaf
-;;   :defer t
-;;   :config
-;;   (setq! eaf-http-proxy-host "127.0.0.1")
-;;   (setq! eaf-http-proxy-port "8118")
-;;   (eaf-bind-key scroll_up "C-n" eaf-pdf-viewer-keybinding)
-;;   (eaf-bind-key scroll_down "C-p" eaf-pdf-viewer-keybinding)
-;;   )
 
 ;; youdao dict config
 (use-package! youdao-dictionary
@@ -376,6 +368,8 @@
         org-roam-server-network-label-truncate t
         org-roam-server-network-label-truncate-length 60
         org-roam-server-network-label-wrap-length 20)
+
+(add-hook! 'auto-save-hook 'org-save-all-org-buffers)
 
 (after! org-roam
   (add-to-list 'org-roam-capture-ref-templates
