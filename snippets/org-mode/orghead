@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: orghead
+# uuid: orghead
+# key: head
+# condition: t
+# --
+
+#+TITLE:    $1
+#+AUTHOR:   Jack Deng
+#+DATE:     $2
+#+EMAIL:    denglw@si-tech.com

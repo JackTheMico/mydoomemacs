@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: hugo
+# uuid: hugo
+# key: hugo
+# condition: t                         
+# --
+
+
+#+TITLE:            $1
+#+AUTHOR:           Jack Deng
+#+DATE:             $2
+#+EMAIL:            $3dlwxxxdlw@163.com
+#+hugo_tags:        $4
+#+hugo_categories:  $5
+#+hugo_section:     $6posts
+#+hugo_base_dir:    /home/dlwxxxdlw/myhugo
