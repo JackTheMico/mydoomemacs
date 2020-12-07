@@ -1,6 +1,6 @@
 ;;; private/jackdeng/config.el -*- lexical-binding: t; -*-
 
-(setq doom-localleader-key ",")
+(setq! doom-localleader-key ",")
 
 (map!
   (:after python
@@ -32,14 +32,6 @@
     )
   )
 
-(map!
- (:after pyim
-   :map pyim-mode-map
-   ("C-n" #'pyim-page-next-page
-    "C-p" #'pyim-page-previous-page
-    )
-   )
- )
 
 (map!
  (:after org
@@ -51,34 +43,14 @@
    )
  )
 
-(map!
- (:after org
-  :map org-roam-mode-map
-    ("C-c n l" #'org-roam
-    "C-c n f" #'org-roam-find-file
-    "C-c n g" #'org-roam-graph-show
-    "C-c n i" #'org-roam-insert
-    "C-c n I" #'org-roam-insert-immediate
-    )
-  )
- )
 
 (map! :leader
       (:prefix ("z" . "custom")
         "h" #'toggle-env-http-proxy
         "y" #'youdao-dictionary-search-at-point+
         "i" #'youdao-dictionary-search-from-input)
-      (:prefix ("a" . "app")
-        "m" #'mu4e
-        "r" #'ranger)
       (:prefix-map ("b" . "buffer")
         "h" #'+doom-dashboard/open)
-      ;; (:prefix ("e" . "eaf")
-      ;;   "o" #'eaf-open
-      ;;   "u" #'eaf-open-browser
-      ;;   "b" #'eaf-open-bookmark
-      ;;   "s" #'eaf-file-sender-qrcode
-      ;;   "r" #'eaf-file-receiver-qrcode)
       (:prefix ("p" . "project")
         "S" #'+ivy/project-search
         "R" #'projectile-replace)
@@ -87,9 +59,9 @@
       (:prefix ("f" . "file")
         "o" #'org-save-all-org-buffers)
       (:prefix ("n" . "notes")
-       (:prefix ("r" . "roam")
-        "s" #'org-roam-server-mode
-        )
+       )
+      (:prefix ("g" . "git")
+       "c" #'counsel-git-checkout
        )
       )
 

@@ -13,24 +13,21 @@
 (load! "+misc")
 (load! "+bindings")
 ;;修改windows版本的PATH路径。
-(if (eq system-type 'windows-nt)
+(after! 'emacs-startup-hook
     (setenv "PATH"
             (concat
              "C:/Users/Jack Deng/scoop/shims" ";"
              (getenv "PATH")
              )
             )
-  nil)
+  )
 
-(setq! user-full-name "Jack Deng"
-       user-mail-address "dlwxxxdlw@gmail.com"
-       dash-docs-docsets-path "/mnt/d/zealdocs"
-       exec-path (append '("/home/dlwxxxdlw/go/bin") exec-path)
-       shrface-toggle-bullets nil
-       shrface-href-versatile t
-       org-roam-directory "/mnt/d/Jack Deng/Dropbox/org/"
-       rainbow-fart-voice-model "JustKowalski"
+(setq! user-full-name "denglw"
+       user-mail-address "denglw@si-tech.com.cn"
+       +treemacs-git-mode 'deferred
+       font-lock-maximum-size 10000000
        )
+
 ;; org-mode export pdf config
  ;; org-mode export pdf config
 (after! ox-latex
@@ -106,19 +103,19 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-;; (setq! doom-font (font-spec :family "DejaVu Sans Mono for Powerline" :size 15) ;; default monospace
-;;        doom-variable-pitch-font (font-spec :family "sans")
-;;        ) ;; default sans
-(setq! doom-theme 'misterioso
+(setq! doom-font (font-spec :family "Monaco" :size 15) ;; default monospace
+       doom-variable-pitch-font (font-spec :family "sans" :size 13)
+       ) ;; default sans
+(setq! doom-theme 'doom-moonlight
       +doom-dashboard-banner-dir "~/.doom.d/banners"
       +doom-dashboard-banner-file "Amadeus.png")
-(set-fontset-font t nil "Symbola" nil 'prepend)
-(set-face-attribute
- 'default nil
- :font (font-spec :name "Monaco"
-                  :weight 'normal
-                  :slant 'normal
-                  :size 15))
+;; (set-fontset-font t nil "Symbola" nil 'prepend)
+;; (set-face-attribute
+;;  'default nil
+;;  :font (font-spec :name "Monaco"
+;;                   :weight 'normal
+;;                   :slant 'normal
+;;                   :size 15))
 (dolist (charset '(kana han symbol cjk-misc bopomofo))
   (set-fontset-font
    (frame-parameter nil 'font)
@@ -130,7 +127,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq! org-directory "d:/Jack Deng/Dropbox/org")
+(setq! org-directory "d:/Jack Deng/org")
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -165,38 +162,8 @@
   (setq! youdao-dictionary-search-history-file "~/.emacs.d/.youdao")
   )
 
-;; wucuo
-
-(use-package! wucuo
-  :defer t
-  )
-(add-hook! 'prog-mode-hook #'wucuo-start)
-(add-hook! 'text-mode-hook #'wucuo-start)
-
 ;; 用来找拖慢启动的代码，将配置夹在这两行中间
 (message "Startup Time: %.04fs" (float-time (time-subtract (current-time) start)))
 
 ;; java
 (setq! lsp-java-java-path "d:/Program Files/AdoptOpenJDK/jdk-11.0.4.11-hotspot/bin/java.exe")
-
-;; (setenv "JAVA_HOME" "d:/Program Files/Java/jdk1.6.0_45")
-;; (setq! meghanada-maven-path "d:/maven/bin/mvn.bat"
-       ;; meghanada-maven-local-repository "d:/maven/repository"
-       ;; meghanada-java-path "d:/Program Files/Java/jdk1.6.0_45/bin/java.exe"
-       ;; )
-;; (add-hook! 'java-mode-hook
-;;           (lambda ()
-;;             ;; meghanada-mode on
-;;             (meghanada-mode t)
-;;             (flycheck-mode +1)
-;;             (setq c-basic-offset 2)
-;;             ;; use code format
-;;             (add-hook 'before-save-hook 'meghanada-code-beautify-before-save)))
-
-;; (cond
-;;    ((eq system-type 'windows-nt)
-;;     (setq! meghanada-java-path (expand-file-name "bin/java.exe" (getenv "JAVA_HOME")))
-;;     )
-;;    (t
-;;     (setq! meghanada-java-path "java")
-;;     (setq! meghanada-maven-path "mvn")))

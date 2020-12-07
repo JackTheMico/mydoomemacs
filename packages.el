@@ -50,4 +50,3 @@
 ;(unpin! t)
 
 (package! youdao-dictionary :recipe (:host github :repo "xuchunyang/youdao-dictionary.el"))
-(package! wucuo :recipe (:host github :repo "redguardtoo/wucuo"))
