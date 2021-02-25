@@ -113,7 +113,7 @@
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
 ;; test
-(setq! doom-font (font-spec :family "DejaVu Sans Mono for Powerline" :size 15) ;; default monospace
+(setq! doom-font (font-spec :family "Source Code Pro Black" :size 15) ;; default monospace
       doom-variable-pitch-font (font-spec :family "sans")) ;; default sans
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
