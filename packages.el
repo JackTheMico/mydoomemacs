@@ -50,6 +50,6 @@
 (package! youdao-dictionary :recipe (:host github :repo "xuchunyang/youdao-dictionary.el"))
 (package! python-yapf :recipe (:host github :repo "galeo/python-yapf.el"))
 (package! rime :recipe (:host github :repo "DogLooksGood/emacs-rime"))
-(package! org-roam-server :recipe (:host github :repo "org-roam/org-roam-server"))
+;; (package! org-roam-server :recipe (:host github :repo "org-roam/org-roam-server"))
 ;; (package! webkit-color-picker :recipe (:host github :repo "osener/emacs-webkit-color-picker"))
 ;; (package! esup :recipe (:host github :repo "jschaf/esup"))

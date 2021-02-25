@@ -15,11 +15,11 @@
 
 (setq! user-full-name "Jack Deng"
        user-mail-address "dlwxxxdlw@gmail.com"
-       dash-docs-docsets-path "/mnt/d/zealdocs"
+       dash-docs-docsets-path "/home/dlwxxxdlw/.local/share/Zeal/Zeal/docsets"
        exec-path (append '("/home/dlwxxxdlw/go/bin") exec-path)
        shrface-toggle-bullets nil
        shrface-href-versatile t
-       org-roam-directory "/mnt/d/Jack Deng/Dropbox/org/"
+       ;; org-roam-directory "/mnt/d/Jack Deng/Dropbox/org/"
        )
 
 ;; pyim 输入法设置
@@ -119,13 +119,13 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. These are the defaults.
-(setq! doom-theme 'doom-moonlight
+(setq! doom-theme 'doom-fairy-floss
       +doom-dashboard-banner-dir "~/.doom.d/banners"
       +doom-dashboard-banner-file "Amadeus.png")
 
 ;; If you intend to use org, it is recommended you change this!
-(setq! org-directory "/mnt/d/Jack Deng/Dropbox/org"
-       org-download-image-dir "/mnt/d/Jack Deng/Dropbox/org/screenshots"
+(setq! org-directory "/home/dlwxxxdlw/Nutstore Files/org/"
+       org-download-image-dir "/home/dlwxxxdlw/Nutstore Files/org/screenshots"
        )
 
 ;; If you want to change the style of line numbers, change this to `relative' or
@@ -155,7 +155,7 @@
   :defer t)
 
 ;; deft
-(setq! deft-directory "/mnt/d/Jack Deng/Dropbox/org/")
+(setq! deft-directory "/home/dlwxxxdlw/Nutstore Files/org/")
 
 ;; nyan-mode
 (use-package! nyan-mode
@@ -359,32 +359,32 @@
 ;;            (org-roam-server-mode))
 
 
-(setq! org-roam-server-host "127.0.0.1"
-        org-roam-server-port 9090
-        org-roam-server-export-inline-images t
-        org-roam-server-authenticate nil
-        org-roam-server-network-poll t
-        org-roam-server-network-arrows nil
-        org-roam-server-network-label-truncate t
-        org-roam-server-network-label-truncate-length 60
-        org-roam-server-network-label-wrap-length 20)
+;; (setq! org-roam-server-host "127.0.0.1"
+;;         org-roam-server-port 9090
+;;         org-roam-server-export-inline-images t
+;;         org-roam-server-authenticate nil
+;;         org-roam-server-network-poll t
+;;         org-roam-server-network-arrows nil
+;;         org-roam-server-network-label-truncate t
+;;         org-roam-server-network-label-truncate-length 60
+;;         org-roam-server-network-label-wrap-length 20)
 
 (add-hook! 'auto-save-hook 'org-save-all-org-buffers)
 
-(after! org-roam
-  (add-to-list 'org-roam-capture-ref-templates
-               '("a" "Annotation" plain (function org-roam-capture--get-point)
-                 "%U ${body}\n"
-                 :file-name "${slug}"
-                 :head "#+title: ${title}\n#+roam_key: ${ref}\n#+roam_alias:\n"
-                 :immediate-finish t
-                 :unnarrowed t)
-               '("r" "ref" plain (function org-roam-capture--get-point)
-                 ""
-                 :file-name "${slug}"
-                 :head "#+title: ${title}\n#+roam_key: ${ref}\n"
-                 :unnarrowed t)
-               ))
+;; (after! org-roam
+;;   (add-to-list 'org-roam-capture-ref-templates
+;;                '("a" "Annotation" plain (function org-roam-capture--get-point)
+;;                  "%U ${body}\n"
+;;                  :file-name "${slug}"
+;;                  :head "#+title: ${title}\n#+roam_key: ${ref}\n#+roam_alias:\n"
+;;                  :immediate-finish t
+;;                  :unnarrowed t)
+;;                '("r" "ref" plain (function org-roam-capture--get-point)
+;;                  ""
+;;                  :file-name "${slug}"
+;;                  :head "#+title: ${title}\n#+roam_key: ${ref}\n"
+;;                  :unnarrowed t)
+;;                ))
 
 ;; 用来找拖慢启动的代码，将配置夹在这两行中间
 (message "Startup Time: %.04fs" (float-time (time-subtract (current-time) start)))
