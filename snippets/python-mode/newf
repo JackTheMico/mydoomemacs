@@ -13,7 +13,7 @@
 
     Description:      $2
 
-    Author:           denglw@si-tech.com.cn
+    Author:           jack@fireworkhq.com
 
     Date:             ${3:$(format-time-string "%Y-%m-%d-%H:%M:%S")}
 
