@@ -3,7 +3,7 @@
 (defun toggle-env-http-proxy ()
   "set/unset the environment variable http_proxy which w3m uses"
   (interactive)
-  (let ((proxy "http://127.0.0.1:2340"))
+  (let ((proxy "http://127.0.0.1:7890"))
     (if (string= (getenv "HTTP_PROXY") proxy)
         ;; clear the proxy
         (progn
@@ -12,7 +12,7 @@
       ;; set the proxy
       (setenv "HTTP_PROXY" proxy)
       (message "env HTTP_PROXY is %s now" proxy)))
-  (let ((proxys "https://127.0.0.1:2340"))
+  (let ((proxys "https://127.0.0.1:7890"))
     (if (string= (getenv "HTTPS_PROXY") proxys)
         ;; clear the proxy
         (progn
